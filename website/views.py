@@ -35,3 +35,16 @@ def delete_note():
             db.session.commit()
 
     return jsonify({})
+
+
+@views.route('/user-info')
+@login_required
+def user_info():
+    user_info = {
+        "email": current_user.email,
+        "firstName": current_user.first_name,
+        "lastName": current_user.last_name,
+        "team": current_user.team,
+        "projectName": current_user.project_name
+    }
+    return jsonify(user_info)
