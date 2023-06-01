@@ -17,6 +17,5 @@ class User(db.Model, UserMixin):
     first_name = db.Column(db.String(150))
     last_name = db.Column(db.String(150))  # new field
     team = db.Column(db.String(150))  # new field
-    dob = db.Column(db.Date)  # new field
     project_name = db.Column(db.String(150))
     notes = db.relationship('Note')
